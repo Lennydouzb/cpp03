@@ -6,7 +6,7 @@
 /*   By: ldesboui <ldesboui@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 17:54:06 by ldesboui          #+#    #+#             */
-/*   Updated: 2026/03/12 13:04:15 by ldesboui         ###   ########.fr       */
+/*   Updated: 2026/03/12 13:04:36 by ldesboui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ScavTrap.hpp"
@@ -25,8 +25,13 @@ ScavTrap::ScavTrap( std::string name ) : ClapTrap(name)
 {
 	this->_hitPoints = 100;
 	this->_energy = 50;
-	this->_attackDamage = 20;std::cout << "A ScavTrap named " 
+	this->_attackDamage = 20;
+	std::cout << "A ScavTrap named " 
 		<< this->_name << " has been created with a cool name."<< std::endl;
+}
+ScavTrap::~ScavTrap( void )
+{
+	std::cout << "ScavTrap " << this->_name << " has been destructed" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& aScavTrap)
@@ -49,12 +54,6 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& aScavTrap)
 	return (*this);
 
 }
-
-ScavTrap::~ScavTrap( void )
-{
-	std::cout << "ScavTrap " << this->_name << " has been destructed" << std::endl;
-}
-
 void	ScavTrap::attack(const std::string& target)
 {
 	if (this->_energy > 0 && this->_hitPoints > 0)
