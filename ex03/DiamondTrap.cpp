@@ -6,7 +6,7 @@
 /*   By: ldesboui <ldesboui@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 19:01:16 by ldesboui          #+#    #+#             */
-/*   Updated: 2026/03/17 20:17:29 by ldesboui         ###   ########.fr       */
+/*   Updated: 2026/03/18 17:34:56 by ldesboui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "DiamondTrap.hpp"
@@ -23,8 +23,9 @@ DiamondTrap::DiamondTrap( void )
 		<< std::endl;
 }
 
-DiamondTrap::DiamondTrap( std::string name ) : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name)
+DiamondTrap::DiamondTrap( std::string name ) : ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name)
 {
+	this->ClapTrap::_name= name + "_clap_name";
 	this->_name = name;
 	this->_hitPoints = 100;
 	this->_energy = 50;
@@ -40,19 +41,20 @@ DiamondTrap::~DiamondTrap( void )
 DiamondTrap::DiamondTrap(const DiamondTrap& aDiamondTrap)
 {
 	this->_name = aDiamondTrap._name;
+	this->ClapTrap::_name = aDiamondTrap.ClapTrap::_name;
 	this->_hitPoints = aDiamondTrap._hitPoints;
 	this->_energy = aDiamondTrap._energy;
-	this->_attackDamage = aDiamondTrap._energy;
+	this->_attackDamage = aDiamondTrap._attackDamage;
 	std::cout << "a DiamondTrap named " << this->_name << " has been created, it's a clone" << std::endl;
 }
 
 DiamondTrap& DiamondTrap::operator=(const DiamondTrap& aDiamondTrap)
 {
 	std::cout << "DiamondTrap " << this->_name << " stole " << aDiamondTrap._name << " attributes";
-	this->ClapTrap::_name = aDiamondTrap._name;
+	this->ClapTrap::_name = aDiamondTrap.ClapTrap::_name;
 	this->_hitPoints = aDiamondTrap._hitPoints;
 	this->_energy = aDiamondTrap._energy;
-	this->_attackDamage = aDiamondTrap._energy;
+	this->_attackDamage = aDiamondTrap._attackDamage;
 	std::cout << " it is now " << this->_name <<  std::endl;
 	return (*this);
 
@@ -62,7 +64,7 @@ void	DiamondTrap::whoAmI( void )
 {
 	if (this->_energy > 0 && this->_hitPoints > 0)
 	{
-		std::cout << "I'm " << this->ClapTrap::_name << "_clap_name" << " or "<< this->FragTrap::_name << std::endl;
+		std::cout << "I'm " << this->ClapTrap::_name << " or "<< this->_name << std::endl;
 			this->_energy -= 1;
 	}
 	else

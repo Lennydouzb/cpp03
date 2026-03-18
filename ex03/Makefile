@@ -1,11 +1,12 @@
 CXX=c++
 CXXFLAGS = -Wall -Werror -Wextra -g -std=c++98
-NAME = scavtrap
+NAME = diamondtrap
 SRC_DIR = ./
 SRCS = $(SRC_DIR)main.cpp \
 	   $(SRC_DIR)ClapTrap.cpp \
 	   $(SRC_DIR)ScavTrap.cpp \
 	   $(SRC_DIR)FragTrap.cpp \
+	   $(SRC_DIR)DiamondTrap.cpp \
 
 OBJ_DIR = .build/
 OBJS = $(SRCS:$(SRC_DIR)%.cpp=$(OBJ_DIR)%.o)

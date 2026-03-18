@@ -6,7 +6,7 @@
 /*   By: ldesboui <ldesboui@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 12:22:17 by ldesboui          #+#    #+#             */
-/*   Updated: 2026/03/17 19:24:12 by ldesboui         ###   ########.fr       */
+/*   Updated: 2026/03/18 17:14:52 by ldesboui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "FragTrap.hpp"
@@ -40,7 +40,7 @@ FragTrap::FragTrap(const FragTrap& aFragTrap)
 	this->_name = aFragTrap._name;
 	this->_hitPoints = aFragTrap._hitPoints;
 	this->_energy = aFragTrap._energy;
-	this->_attackDamage = aFragTrap._energy;
+	this->_attackDamage = aFragTrap._attackDamage;
 	std::cout << "a FragTrap named " << this->_name << " has been created, it's a clone" << std::endl;
 }
 
@@ -50,7 +50,7 @@ FragTrap& FragTrap::operator=(const FragTrap& aFragTrap)
 	this->_name = aFragTrap._name;
 	this->_hitPoints = aFragTrap._hitPoints;
 	this->_energy = aFragTrap._energy;
-	this->_attackDamage = aFragTrap._energy;
+	this->_attackDamage = aFragTrap._attackDamage;
 	std::cout << " it is now " << this->_name <<  std::endl;
 	return (*this);
 

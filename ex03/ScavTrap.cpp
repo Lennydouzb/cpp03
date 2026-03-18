@@ -6,7 +6,7 @@
 /*   By: ldesboui <ldesboui@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 17:54:06 by ldesboui          #+#    #+#             */
-/*   Updated: 2026/03/12 13:04:36 by ldesboui         ###   ########.fr       */
+/*   Updated: 2026/03/18 17:14:07 by ldesboui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ScavTrap.hpp"
@@ -39,7 +39,7 @@ ScavTrap::ScavTrap(const ScavTrap& aScavTrap)
 	this->_name = aScavTrap._name;
 	this->_hitPoints = aScavTrap._hitPoints;
 	this->_energy = aScavTrap._energy;
-	this->_attackDamage = aScavTrap._energy;
+	this->_attackDamage = aScavTrap._attackDamage;
 	std::cout << "a ScavTrap named " << this->_name << " has been created, it's a clone" << std::endl;
 }
 
@@ -49,7 +49,7 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& aScavTrap)
 	this->_name = aScavTrap._name;
 	this->_hitPoints = aScavTrap._hitPoints;
 	this->_energy = aScavTrap._energy;
-	this->_attackDamage = aScavTrap._energy;
+	this->_attackDamage = aScavTrap._attackDamage;
 	std::cout << " it is now " << this->_name <<  std::endl;
 	return (*this);
 
