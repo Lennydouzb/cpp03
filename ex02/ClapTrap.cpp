@@ -6,7 +6,7 @@
 /*   By: ldesboui <ldesboui@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 15:11:36 by ldesboui          #+#    #+#             */
-/*   Updated: 2026/03/11 19:00:58 by ldesboui         ###   ########.fr       */
+/*   Updated: 2026/03/24 13:48:39 by ldesboui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ClapTrap.hpp"
@@ -36,7 +36,7 @@ ClapTrap::ClapTrap(const ClapTrap& aClapTrap)
 	this->_name = aClapTrap._name;
 	this->_hitPoints = aClapTrap._hitPoints;
 	this->_energy = aClapTrap._energy;
-	this->_attackDamage = aClapTrap._energy;
+	this->_attackDamage = aClapTrap._attackDamage;
 	std::cout << this->_name << " has been created, it's a clone" << std::endl;
 }
 
@@ -54,7 +54,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& aClapTrap)
 	this->_name = aClapTrap._name;
 	this->_hitPoints = aClapTrap._hitPoints;
 	this->_energy = aClapTrap._energy;
-	this->_attackDamage = aClapTrap._energy;
+	this->_attackDamage = aClapTrap._attackDamage;
 	std::cout << " it is now " << this->_name <<  std::endl;
 	return (*this);
 }
