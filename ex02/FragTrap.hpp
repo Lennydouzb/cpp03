@@ -6,7 +6,7 @@
 /*   By: ldesboui <ldesboui@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 12:21:24 by ldesboui          #+#    #+#             */
-/*   Updated: 2026/03/12 12:22:00 by ldesboui         ###   ########.fr       */
+/*   Updated: 2026/03/25 17:10:33 by ldesboui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #pragma once
@@ -20,6 +20,5 @@ public:
 	FragTrap( std::string name );
 	FragTrap( const FragTrap& aFragTrap);
 	FragTrap &operator=(const FragTrap& aFragTrap);
-	void	attack(const std::string& target);
 	void	highFivesGuys( void );
 };

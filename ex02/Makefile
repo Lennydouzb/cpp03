@@ -1,6 +1,6 @@
 CXX=c++
 CXXFLAGS = -Wall -Werror -Wextra -g -std=c++98
-NAME = scavtrap
+NAME = fragtrap
 SRC_DIR = ./
 SRCS = $(SRC_DIR)main.cpp \
 	   $(SRC_DIR)ClapTrap.cpp \

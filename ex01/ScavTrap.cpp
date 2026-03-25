@@ -6,7 +6,7 @@
 /*   By: ldesboui <ldesboui@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 17:54:06 by ldesboui          #+#    #+#             */
-/*   Updated: 2026/03/24 13:48:04 by ldesboui         ###   ########.fr       */
+/*   Updated: 2026/03/25 17:07:43 by ldesboui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ScavTrap.hpp"
@@ -40,6 +40,8 @@ ScavTrap::ScavTrap(const ScavTrap& aScavTrap)
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& aScavTrap)
 {
+	if (this == &aScavTrap)
+		return (*this);
 	std::cout << "ScavTrap " << this->_name << " stole " << aScavTrap._name << " attributes";
 	this->_name = aScavTrap._name;
 	this->_hitPoints = aScavTrap._hitPoints;

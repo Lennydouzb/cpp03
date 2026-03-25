@@ -6,7 +6,7 @@
 /*   By: ldesboui <ldesboui@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 15:02:34 by ldesboui          #+#    #+#             */
-/*   Updated: 2026/03/11 17:55:49 by ldesboui         ###   ########.fr       */
+/*   Updated: 2026/03/25 17:09:01 by ldesboui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #pragma once
@@ -27,7 +27,7 @@ public:
 	ClapTrap( const ClapTrap& aClapTrap);
 	ClapTrap &operator=(const ClapTrap& aClapTrap);
 	~ClapTrap( void );
-	void	attack(const std::string& target);
+	virtual void	attack(const std::string& target);
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
 };

@@ -6,7 +6,7 @@
 /*   By: ldesboui <ldesboui@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 15:11:36 by ldesboui          #+#    #+#             */
-/*   Updated: 2026/03/24 13:46:57 by ldesboui         ###   ########.fr       */
+/*   Updated: 2026/03/25 16:52:21 by ldesboui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ClapTrap.hpp"
@@ -50,6 +50,8 @@ ClapTrap::~ClapTrap( void )
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& aClapTrap)
 {
+	if (this == &aClapTrap)
+		return (*this);
 	std::cout << this->_name << " stole " << aClapTrap._name << " attributes";
 	this->_name = aClapTrap._name;
 	this->_hitPoints = aClapTrap._hitPoints;

@@ -6,7 +6,7 @@
 /*   By: ldesboui <ldesboui@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 19:01:16 by ldesboui          #+#    #+#             */
-/*   Updated: 2026/03/18 17:34:56 by ldesboui         ###   ########.fr       */
+/*   Updated: 2026/03/25 17:15:33 by ldesboui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "DiamondTrap.hpp"
@@ -16,9 +16,9 @@ DiamondTrap::DiamondTrap( void )
 {
 	this->ClapTrap::_name = "Clanker_clap_name";
 	this->_name = "Clanker";
-	this->_hitPoints = 100;
-	this->_energy = 100;
-	this->_attackDamage = 30;
+	this->_hitPoints = FragTrap::_hitPoints;
+	this->_energy = ScavTrap::_energy;
+	this->_attackDamage = FragTrap::_energy;
 	std::cout << "A DiamondTrap named " << this->_name << " has been created."
 		<< std::endl;
 }
@@ -27,9 +27,9 @@ DiamondTrap::DiamondTrap( std::string name ) : ClapTrap(name + "_clap_name"), Fr
 {
 	this->ClapTrap::_name= name + "_clap_name";
 	this->_name = name;
-	this->_hitPoints = 100;
-	this->_energy = 50;
-	this->_attackDamage = 20;
+	this->_hitPoints = FragTrap::_hitPoints;
+	this->_energy = ScavTrap::_energy;
+	this->_attackDamage = FragTrap::_energy;
 	std::cout << "A DiamondTrap named " 
 		<< this->_name << " has been created with a cool name."<< std::endl;
 }

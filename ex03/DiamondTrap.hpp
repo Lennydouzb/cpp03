@@ -6,7 +6,7 @@
 /*   By: ldesboui <ldesboui@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 18:51:35 by ldesboui          #+#    #+#             */
-/*   Updated: 2026/03/17 18:59:34 by ldesboui         ###   ########.fr       */
+/*   Updated: 2026/03/25 17:12:56 by ldesboui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #pragma once
@@ -24,4 +24,5 @@ public:
 	DiamondTrap& operator=(const DiamondTrap& aDiamondTrap);
 	~DiamondTrap( void );
 	void whoAmI( void );
+	using ScavTrap::attack;
 };
